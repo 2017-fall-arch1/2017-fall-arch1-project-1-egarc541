@@ -1,56 +1,40 @@
-# arch1-linked-list-demo
+# arch1-Personal Management System-- Eulalio Garcia #
 
-This directory contains:
-* code that implements a linked list of strings 
-* a demo program that uses it
 
-The demo program reads lines from stdin.
-Each line is appended onto a linked list.
-After end-of-file is read, the lines are printed out.
+--To compile:
 
-This demo contains the following files:
- llist.h: header file of llist structure & "public" interface functions
- llist.c: implementation of linked list
- listDemo.c: a demonstration program that uses the linked list
- 
+     $ make
 
-To compile:
-~~~
-$ make
-~~~
+--To test/run program:
+   
+   $ ./project
 
-To test it, try:
-~~~
-$ make demo
-~~~
+--To delete binaries:
 
-To delete binaries:
-~~~
-$ make clean
-~~~
+   $ make clean
 
-# Things to figure out #
 
-1. Examine llist.h.  It defines llist's structures and declares llist's interface.
-  - seriously, look at the comments too.
-  - notice how the #ifndef/endif at the top/botom prevents multiple inclusion
-2. Peek at llist.c to see how llist's functions are implemented.
-   Be sure to check out how llCheck, llDoCheck and doCheck interact.  
-3. Peek at llistDemo to see how llist is used.
-4. Be sure you understand how these codes use malloc() and free().
-5. Notice how the Makefile specifies
-  - dependencies
-  - the default production (the first one, which happens to be called "all")
-  - how each .o file has its own productions specifying prerequisite source & include files (why?)
-  - how the (in this case, one) program is its own production specifying prerequisite .o files     
-  - the demo production.  Notice
-    - which strings are quoted
-    - what the parentheses and pipe (|) symbol are doing
-6. Try extending llist.  Perhaps
-  - adding llGet() method to llist.c and llist.h
-     - that discards the first item and returns the string it contained
-     - writing another demo (probably starting with ours) that tests llGet().
-     - be sure to use llCheck
-     - and adding Makefile productions to compile & test it
-  - the same as above, but now add llReverse that reverses list order to llist.c
+# Description #
+
+This program main functionallity is to add, remove and read names from an external file text. After doing all this steps
+the program should install the names into a Binary Search Tree.
+--This program is intended to allow the user to add names into an employee list.
+--The program will allow user to remove names from the external file by using the User Interface.
+-- The program will allow the user to read names in the order they user inserts the names and also
+   it will allow the user to read the names after they have being inserted into the BST in alphabetical order.
+
+
+My approach of the Binary Search Tree was different because instead of inserting all the names directly into the BST,
+I tried to implemented them directly into the file. After being stored in the file, the Binary search tree would insert
+only if the user makes the command in the User Interface. For example, if the user wanted to delete the name from the BST he
+would just delete the name directly from the external file with the remove name method instead of using a delete node method
+that was not implemented in this program. The insert method is made with a bst struct and will insert every name in the BST after
+being selected.
+
+
+
+# References #
+For the duration of this project I use and refer to several websites that help us understand how the user could add names into an
+external file and on how to insert them into the BST. Also I would like to mentioned that I shared ideas not any code with my peer
+Guillermo Ramirez on how there are different ways of making this system work appropiately.
 
